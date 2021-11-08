@@ -13,6 +13,28 @@ function getVowels(string) {
 const string = "AaBaaaai";
 console.log(getVowels(string));
 
+//////////////////////////////////////
+
+function searchAnnagr(arr) {
+  let obj = {};
+  let input = [];
+
+  for (let word of arr) {
+    let sorted = word.toLowerCase().split("").sort().join("");
+    if (sorted in obj) {
+      obj[sorted].push(word);
+    } else {
+      obj[sorted] = [word];
+    }
+  }
+  for (let annagr in obj) {
+    input.push(obj[annagr]);
+  }
+  console.log(input);
+  return input;
+}
+let arr = ["tom", "xyz", "mot", "xel", "zXy", "yxz"];
+searchAnnagr(arr);
 ///////////////////////////////////////
 
 const messages = [
@@ -30,6 +52,12 @@ function addMessage(message) {
 }
 
 function getTimeOfMessage(message) {
+  for (let message of messagesDate.keys()) {
+    if (!messages.includes(message)) {
+      messagesDate.delete(message);
+    }
+  }
+
   return messagesDate.get(message);
 }
 
@@ -41,3 +69,4 @@ setTimeout(() => {
   messages.splice(1, 1);
   messages.forEach((message) => console.log(getTimeOfMessage(message)));
 }, 2100);
+setTimeout(() => console.log(messagesDate), 3000);
