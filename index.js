@@ -70,3 +70,30 @@ function mul(a) {
   };
 }
 console.log(mul(1)(2)(4)(5)());
+
+///////////////////////////////////////////
+
+function getStrongFunc(func) {
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      let current = func.apply(this, args);
+      return function f(b) {
+        if (b) {
+          current = func(current, b);
+          return f;
+        } else {
+          return current;
+        }
+      };
+    } else {
+      return function (...args2) {
+        return curried.apply(this, args.concat(args2));
+      };
+    }
+  };
+}
+
+const mulu = getStrongFunc((a, b) => a * b);
+console.log(mulu(1)(2)(4)(5)()); //40
+const sumu = getStrongFunc((a, b) => a + b);
+console.log(sumu(1)(2)(4)(5)()); //12
