@@ -1,7 +1,7 @@
-export function isAuth() {
+function isAuth() {
   if (Math.random() > 0.5) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
+export default isAuth;
