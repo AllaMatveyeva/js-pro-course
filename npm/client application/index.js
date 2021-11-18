@@ -1,8 +1,12 @@
-import Guest from "./guest.js";
-import User from "./user.js";
 import isAuth from "./isAuth.js";
 
-const user = isAuth() ? new User("Alla") : new Guest("Anonim");
-/*eslint-disable*/
-console.log(user);
-/* eslint-enable */
+function getObj(module, name) {
+  let obj = import(module);
+  obj.then((res) => {
+    let Name = res.default;
+    let user = new Name(name);
+    console.log(user);
+  });
+}
+
+isAuth() ? getObj("./user.js", "Alla") : getObj("./guest.js", "Anonim");
