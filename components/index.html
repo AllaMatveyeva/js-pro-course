@@ -31,12 +31,12 @@
       }
 
       ::slotted([slot="title"]:hover) {
-        font-weight: bold;
+        font-weight:bold;
       }
 
-      ::slotted([slot="item"]:hover) {
+      /* ::slotted([slot="item"]:hover) {
         font-weight: bold;
-      }
+      } */
 
       ::slotted([slot="item"]):not(:defined) {
         opacity: 0;
@@ -49,6 +49,7 @@
       .closed ul {
         display: none;
       }
+      
     </style>
     <div class="menu">
       <slot name="title"></slot>
@@ -57,7 +58,7 @@
       </ul>
     </div>
   </template>
-  <script src="./index.js"></script>
+  <script type="module" src="./index.js"></script>
   <tree-menu id="menu">
     <span slot="title">Царства живых организмов</span>
     <tree-menu slot="item">

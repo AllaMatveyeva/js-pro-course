@@ -59,3 +59,13 @@ class TreeMenu extends HTMLElement {
   }
 }
 customElements.define("tree-menu", TreeMenu);
+
+let items = document.querySelectorAll("li");
+for (let item of items) {
+  item.onmouseover = function (event) {
+    event.target.style.fontWeight = "bold";
+  };
+  item.onmouseout = function (event) {
+    event.target.style.fontWeight = "normal";
+  };
+}
