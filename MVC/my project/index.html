@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC</title>
+  </head>
+  <body>
+    <style>
+      .container-images__list {
+        display: flex;
+      }
+      .container-images__item {
+        flex: 0 0 25%;
+        position: relative;
+        padding-bottom: 15%;
+      }
+      .container-images__img {
+        width: 85%;
+        height: 85%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <div class="title">
+      <h1 class="title__text">Угадай картинку!</h1>
+    </div>
+    <div class="container-images">
+      <ul class="container-images__list">
+        <li class="container-images__item" id="1">
+          <img class="container-images__img" src="./img/dove.jpg" alt="dove" />
+        </li>
+        <li class="container-images__item" id="2">
+          <img class="container-images__img" src="./img/ice_.jpg" alt="ice" />
+        </li>
+        <li class="container-images__item" id="3">
+          <img
+            class="container-images__img"
+            src="./img/woolf.jpeg"
+            alt="woolf"
+          />
+        </li>
+        <li class="container-images__item" id="4">
+          <img class="container-images__img" src="./img/cats.jpeg" alt="cats" />
+        </li>
+      </ul>
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
