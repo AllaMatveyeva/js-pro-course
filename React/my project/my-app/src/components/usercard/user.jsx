@@ -1,3 +1,4 @@
+import { Kliker } from "../kliker/kliker";
 import "./user.scss";
 
 function UserCard(props) {
@@ -7,10 +8,13 @@ function UserCard(props) {
   return (
     <div
       className="user"
-      onClick={() => {
-        document.querySelector(".modal").style = "display:block";
+      onClick={(e) => {
+        if (!e.target.classList.contains("kliker__button")) {
+          document.querySelector(".modal").style = "display:block";
+        }
       }}
     >
+      <Kliker />
       <p className="name">
         <span className="title_name">name: </span> {name}
       </p>
