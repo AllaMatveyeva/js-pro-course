@@ -38,7 +38,7 @@ export class Kliker extends React.Component {
             className="kliker__button kliker__button_drop"
             onClick={(e) => this.handleClickDrop()}
           >
-            dropping
+            drop
           </button>
           <button
             className="kliker__button kliker__button_minus"

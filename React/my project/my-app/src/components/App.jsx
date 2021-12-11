@@ -1,25 +1,16 @@
 import "./App.css";
 import Footer from "./footer/footer";
 import Header from "./header/header";
-import { Kliker } from "./kliker/kliker";
-import GetModalWindow from "./usercard/modalWindow/GetModalWindow";
 
-import UserCard from "./usercard/user";
-import users from "./usercard/users";
-
+import { Users } from "./usercard/users";
+const isUsers = true;
 function App() {
   return (
     <div className="App">
       <header>
         <Header />
-        <Kliker />
       </header>
-      <main>
-        {users.map((user, index) => (
-          <UserCard user={user} key={index} />
-        ))}
-      </main>
-      <GetModalWindow />
+      <main>{isUsers ? <Users /> : <div>Empty Page</div>}</main>
       <Footer />
     </div>
   );

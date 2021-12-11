@@ -1,0 +1,30 @@
+main {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.userCard {
+  margin: 20px;
+  max-width: 250px;
+  padding: 10px;
+  background-color: rgb(2, 35, 83);
+  color: white;
+  font-size: medium;
+  border: 2px solid black;
+  border-radius: 10%;
+  height: fit-content;
+  cursor: pointer;
+
+  .userCard__title {
+    margin: 5px;
+    margin-top: 10px;
+    font-size: medium;
+  }
+  .title_name {
+    color: rgb(211, 232, 238);
+    font-size: medium;
+  }
+  .name {
+    font-size: medium;
+  }
+}
