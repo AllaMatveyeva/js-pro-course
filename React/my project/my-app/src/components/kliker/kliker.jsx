@@ -15,7 +15,11 @@ export class Kliker extends React.Component {
 
   handleClickDrop = () => {
     this.setState((state) => {
-      Object.keys(state).forEach((num) => (state[num] = 0));
+      Object.keys(state).forEach(function (num) {
+        if (num === "numPlus" || num === "numMinus") {
+          state[num] = 0;
+        }
+      });
       return state;
     });
   };
@@ -34,7 +38,7 @@ export class Kliker extends React.Component {
             className="kliker__button kliker__button_drop"
             onClick={(e) => this.handleClickDrop()}
           >
-            dropping
+            drop
           </button>
           <button
             className="kliker__button kliker__button_minus"
